@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qrcode</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+
+<body>
+    <div class="flex items-center justify-center flex-col h-screen w-screen bg-blue-100">
+        <h class="text-xl p-8">A simple card to put your qrcode, created with <a href='https://tailwindcss.com/' target="_blank" class='underline'>Tailwind</a>.</h>
+        <div class="flex h-120 w-64 flex-wrap items-center justify-center rounded-2xl bg-white p-3 shadow-md">
+            <div class="flex h-60 w-60 items-center justify-center rounded-xl bg-blue-500">
+                <div id='qrcode' class="h-2/3 w-2/3"></div>
+            </div>
+            <div class="w-56 pb-5 text-center">
+                <h1 class="text-base font-extrabold mt-2">Improve your front-end skills by building projects</h1>
+                <p class="mt-3 text-xs text-gray-500">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let qrcode = new QRCode("qrcode");
+
+    function makeCode() {
+        qrcode.makeCode('https://github.com/berutodo');
+    }
+
+    makeCode();
+</script>
+
+</html>
